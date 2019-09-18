@@ -3,6 +3,7 @@ from snippets.serializers import SnippetSerializer
 from rest_framework import generics
 
 
+# mixed-in
 class SnippetList(generics.ListCreateAPIView):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer

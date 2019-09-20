@@ -21,3 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^', include('snippets.urls')),
 ]
+
+# 可浏览API的登录和注销视图
+urlpatterns += [
+    url(r'^api-auth/', include('rest_framework.urls',
+                               namespace='rest_framework')),
+]

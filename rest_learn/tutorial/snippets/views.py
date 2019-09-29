@@ -10,6 +10,15 @@ from rest_framework.reverse import reverse
 from rest_framework import renderers
 from rest_framework import viewsets
 from rest_framework.decorators import action
+import django_filters
+
+
+class MyFilter(django_filters.FilterSet):
+    created = django_filters.DateFromToRangeFilter()
+
+    class Meta:
+        model = Snippet
+        fields = {'created': []}
 
 
 class SnippetViewSet(viewsets.ModelViewSet):
@@ -23,6 +32,8 @@ class SnippetViewSet(viewsets.ModelViewSet):
     serializer_class = SnippetSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly]
+
+    filterset_class = MyFilter
 
     @action(detail=True, renderer_classes=[renderers.StaticHTMLRenderer])
     def highlight(self, request, *args, **kwargs):

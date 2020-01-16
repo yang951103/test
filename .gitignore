@@ -1,8 +1,5 @@
-**.idea/**
+.idea/
 *.pyc
 *.sqlite3
 # macOS
 .DS_Store
-rest_learn/tutorial/.idea
-*.xml
-rest_learn/tutorial/.idea/workspace.xml

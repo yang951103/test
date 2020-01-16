@@ -1,0 +1,1 @@
+Authentication is always run at the very start of the view, before the permission and throttling checks occur, and before any other code is allowed to proceed.

@@ -1,7 +1,7 @@
-from snippets.models import Snippet
+from snippets.models import Snippet, Question, Choice
 from snippets.serializers import SnippetSerializer
 from django.contrib.auth.models import User
-from snippets.serializers import UserSerializer
+from snippets.serializers import UserSerializer, QuestionSerializer, ChoiceSerializer
 from rest_framework import permissions
 from snippets.permissions import IsOwnerOrReadOnly
 from rest_framework.decorators import api_view
@@ -42,6 +42,16 @@ class SnippetViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
+
+class QuestionViewSet(viewsets.ModelViewSet):
+    queryset = Question.objects.all()
+    serializer_class = QuestionSerializer
+
+
+class ChoiceViewSet(viewsets.ModelViewSet):
+    queryset = Choice.objects.all()
+    serializer_class = ChoiceSerializer
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):

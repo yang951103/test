@@ -6,6 +6,8 @@ from snippets import views
 router = DefaultRouter()
 router.register(r'snippets', views.SnippetViewSet)
 router.register(r'users', views.UserViewSet)
+router.register(r'question', views.QuestionViewSet)
+router.register(r'choice', views.ChoiceViewSet)
 
 # The API URLs are now determined automatically by the router.
 urlpatterns = [

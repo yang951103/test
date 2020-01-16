@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from snippets.models import Snippet
+from snippets.models import Snippet, Question, Choice
 from django.contrib.auth.models import User
 
 
@@ -19,3 +19,13 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ('url', 'id', 'username', 'snippets')
+
+
+class QuestionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Question
+
+
+class ChoiceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Choice

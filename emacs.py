@@ -1,0 +1,2 @@
+def myf():
+    pass

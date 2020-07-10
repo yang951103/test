@@ -14,3 +14,5 @@ class DjangoModel:
 Department.objects.filter(parent_id=None)可以找到parent_id为None情况，列表里会被忽略
 
 * 请求可以传null，{"parent_id": null, "code": "k"} 对应字段null=True
+
+* Model的Meta被转换为_meta,Serializer的Meta没有

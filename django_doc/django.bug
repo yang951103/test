@@ -1,0 +1,6 @@
+1.多数据库主键长度校验问题。只校验第一个
+2.python manage.py createsuperuser指定数据库不生效
+3.不必要的default拉取
+4.patch的bug。
+5.django拖尾小数点
+6.query的sql打印数据库设置不生效

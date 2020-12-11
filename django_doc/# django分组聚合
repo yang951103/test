@@ -1,0 +1,3 @@
+# django分组聚合
+GreigeProblemStatistics.objects.values("greige_id").annotate(pq=Sum("problem_quantity")).filter(pq__gt=53).values_list('greige_id', flat=True)
+values和values_list为分组。

@@ -1,0 +1,2 @@
+# 智能生产开发流程
+1.修改model makemigrations前必须拉取代码，如果两人同时修改同一个app的model会造成多源依赖问题，多人开发同一个app修改model注意通知交流。
